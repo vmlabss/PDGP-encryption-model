@@ -58,13 +58,17 @@ class MessageDecryptor:
         
         return decrypted_message
 
-private_key, public_key = KeyGenerator.generate_key_pair()
-print("Generated keys are saved in private_key.pem and public_key.pem files.")
+def main():
+    private_key, public_key = KeyGenerator.generate_key_pair()
+    print("Generated keys are saved in private_key.pem and public_key.pem files.")
 
-message = "Hello, this is a secret message!"
-encrypted_symmetric_key, encrypted_message = MessageEncryptor.encrypt_message(public_key, message)
-print("Encrypted Symmetric Key:", encrypted_symmetric_key)
-print("Encrypted Message:", encrypted_message)
+    message = "Hello, this is a secret message!"
+    encrypted_symmetric_key, encrypted_message = MessageEncryptor.encrypt_message(public_key, message)
+    print("Encrypted Symmetric Key:", encrypted_symmetric_key)
+    print("Encrypted Message:", encrypted_message)
 
-decrypted_message = MessageDecryptor.decrypt_message(private_key, encrypted_symmetric_key, encrypted_message)
-print("Decrypted Message:", decrypted_message)
+    decrypted_message = MessageDecryptor.decrypt_message(private_key, encrypted_symmetric_key, encrypted_message)
+    print("Decrypted Message:", decrypted_message)
+
+if __name__ == "__main__":
+    main()
