@@ -8,7 +8,7 @@ app.secret_key = os.urandom(24)
 
 # Configure Firebase
 firebase_config = {
-
+    # Fill in your Firebase configuration details
 }
 firebase = pyrebase.initialize_app(firebase_config)
 auth = firebase.auth()
